@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,73 +65,4 @@
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcgSSnQBGU9uPJn8L-mSAp5ufBxycQ3WM&callback=initMap"></script>
 
 </body>
-=======
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Go Hummus</title>
-    <style>
-        body {
-            margin: 0;
-        }
-        #map {
-            height: 100vh;
-            width: 100vw;
-        }
-    </style>
-</head>
-<body>
-
-<div id="map"></div>
-
-<script>
-    function initMap() {
-
-        // Coordinates
-        var home = {lat: 32.505824, lng: 35.003540};
-        var blueBus = {lat: 32.4805515, lng: 34.9686214};
-        var hamsa = {lat: 32.4732819, lng: 34.9907466};
-        var yosef = {lat: 32.476983, lng: 34.971183};
-        var veAhavta = {lat: 32.466869, lng: 35.017769};
-        var argentina = {lat: 32.4741588, lng: 34.9719166};
-
-        // Initial Center
-        var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 13,
-            center: home
-        });
-
-        // Markers
-        var m1 = new google.maps.Marker({
-            position: home,
-            map: map
-        });
-        var m2 = new google.maps.Marker({
-            position: blueBus,
-            map: map
-        });
-        var m3 = new google.maps.Marker({
-            position: hamsa,
-            map: map
-        });
-        var m4 = new google.maps.Marker({
-            position: yosef,
-            map: map
-        });
-        var m5 = new google.maps.Marker({
-            position: veAhavta,
-            map: map
-        });
-        var m6 = new google.maps.Marker({
-            position: argentina,
-            map: map
-        });
-    }
-</script>
-
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcgSSnQBGU9uPJn8L-mSAp5ufBxycQ3WM&callback=initMap"></script>
-
-</body>
->>>>>>> 9db92bf38cc9b07a19a36ffa1b1bdd74035eec11
 </html>
