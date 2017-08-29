@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Go Hummus</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>    
+    <script src="jquery-ui-map-3.0-rc/ui/min/jquery.ui.map.min.js"></script>
     <style>
         body {
             margin: 0;
@@ -11,11 +13,24 @@
             height: 100vh;
             width: 100vw;
         }
+        form.add-rest {
+            position: absolute;
+            left: 7px;
+            bottom: 30px;
+            background-color: rgba(0,0,0,0.5);
+            padding: 5px;
+        }
     </style>
 </head>
 <body>
 
 <div id="map"></div>
+
+<form class="add-rest">
+    <input id="lat" type="text" placeholder="lat">
+    <input id="lng" type="text" placeholder="lng">
+    <input type="button" value="Add Restaurant">
+</form>
 
 <script>
     function initMap() {
@@ -59,7 +74,21 @@
             position: argentina,
             map: map
         });
+
+        let addRestButton = document.querySelector('.add-rest input[type="button"]');
+        let latField = document.querySelector('#lat');
+        let lngField = document.querySelector('#lng');
+    
+        addRestButton.addEventListener('click', () => {
+            var newMarker = new google.maps.Marker({
+                position: {lat: Number(latField.value), lng: Number(lngField.value)}
+            });
+            newMarker.setMap(map);
+            document.querySelector('.add-rest').reset();
+        });
     }
+
+
 </script>
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcgSSnQBGU9uPJn8L-mSAp5ufBxycQ3WM&callback=initMap"></script>
